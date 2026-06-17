@@ -1,0 +1,2 @@
+# Cursor_Roguelike
+IT USES THE CURSOR!!! I DIDNT USE CURSOR AI!!!
