@@ -17,8 +17,5 @@ namespace Enemies{
             rb.linearVelocity=gameObject.displacement().normalized*moveSpeed;
             Debug.Log("Hunt");
         }
-
-       
-
     }
 }

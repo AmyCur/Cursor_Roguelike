@@ -8,6 +8,5 @@ namespace Util{
             await Task.Delay((int)(delayTime*1000));
             action();
         }
-
     }
 }

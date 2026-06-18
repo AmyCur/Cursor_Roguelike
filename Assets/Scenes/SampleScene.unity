@@ -287,9 +287,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70d9117a97d68563aad93f8793590ad9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health:
+    health: 0
+    maxHealth: 0
   attackCD: 0.2
   range: 3
   hunting: 0
+  moveSpeed: 12
 --- !u!212 &1804144670
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -417,6 +421,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91ba3de6dc61450c98c971f7e998ec62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health:
+    health: 5
+    maxHealth: 0
 --- !u!212 &1849499820
 SpriteRenderer:
   m_ObjectHideFlags: 0

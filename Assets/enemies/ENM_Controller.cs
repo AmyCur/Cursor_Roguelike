@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Threading.Tasks;
+using Entities;
 using UnityEngine;
 using Util;
 
 namespace Enemies{
-    public abstract class ENM_Controller : MonoBehaviour{
+    public abstract class ENM_Controller : ENT_Controller{
         public virtual bool shouldHunt=>!shouldAttack;
         public virtual bool shouldAttack=>false;
         protected bool canAttack;
