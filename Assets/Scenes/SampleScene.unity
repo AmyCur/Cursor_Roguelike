@@ -290,6 +290,7 @@ MonoBehaviour:
   health:
     health: 0
     maxHealth: 0
+  damage: 0
   attackCD: 0.2
   range: 3
   hunting: 0
@@ -402,6 +403,7 @@ GameObject:
   - component: {fileID: 1849499821}
   - component: {fileID: 1849499820}
   - component: {fileID: 1849499819}
+  - component: {fileID: 1849499822}
   m_Layer: 0
   m_Name: Cursor
   m_TagString: Untagged
@@ -424,6 +426,12 @@ MonoBehaviour:
   health:
     health: 5
     maxHealth: 0
+  damage: 0
+  canAttack: 0
+  moveSpeed: 0
+  ballDamage: 0
+  ballRange: 0
+  ballPriority: 0
 --- !u!212 &1849499820
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -494,6 +502,30 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1849499822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1849499818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11dbdb9532f4cc5d0b81255cf266935a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shard:
+    triggers:
+    - name: 
+      triggerSlots: 
+      triggerCondition: 0
+      threshold: 0
+      triggerAmount: 1
+    - name: 
+      triggerSlots: 
+      triggerCondition: 0
+      threshold: 0
+      triggerAmount: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

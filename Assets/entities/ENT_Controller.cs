@@ -1,10 +1,26 @@
 using UnityEngine;
 using Cursor;
+using UnityEngine.Events;
+using Combat;
 
 namespace Entities{
     public abstract class ENT_Controller : MonoBehaviour{
         public Health health;
         public float damage;
+
+
+
+        public virtual void Update(){
+
+        }
+
+        public void HandleDamageAnimation(){}
+
+        public void TakeDamage(float damage){
+            health=health-damage;
+            HandleDamageAnimation();
+            if(!gameObject.IsEntity<CU_Controller>()) CO_Controller.Instance.HandleDamageDealt();
+        }
 
         public ENT_Controller ChooseTarget(CombatPriority priority){
             ENT_Controller[] entities = GameObject.FindObjectsOfType<ENT_Controller>();
@@ -23,8 +39,6 @@ namespace Entities{
                     if(ec.damage < nearest.damage) weakest=ec;
                 }
             }
-            
-
 
             switch (priority){
                 case CombatPriority.near:
