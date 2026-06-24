@@ -2,6 +2,7 @@ using UnityEngine;
 using Cursor;
 using UnityEngine.Events;
 using Combat;
+using Enemies;
 
 namespace Entities{
     public abstract class ENT_Controller : MonoBehaviour{
@@ -10,16 +11,13 @@ namespace Entities{
 
 
 
-        public virtual void Update(){
-
-        }
-
+        
         public void HandleDamageAnimation(){}
 
         public void TakeDamage(float damage){
             health=health-damage;
             HandleDamageAnimation();
-            if(!gameObject.IsEntity<CU_Controller>()) CO_Controller.Instance.HandleDamageDealt();
+            if(gameObject.IsEntity<ENM_Controller>()) CO_Controller.Instance.HandleDamageDealt();
         }
 
         public ENT_Controller ChooseTarget(CombatPriority priority){
