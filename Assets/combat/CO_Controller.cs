@@ -54,7 +54,8 @@ namespace Combat{
 
         void OnTriggerEnter2D(Collider2D other){
             if(other.IsEntity(out ENM_Controller enm) && canAttack){
-                _ = Bool.SetBoolAfterDelay(() => canAttack = false, attackCD);
+                canAttack=false;
+                _ = Bool.SetBoolAfterDelay(() => canAttack = true, attackCD);
                 enm.TakeDamage(damage);
             }
         }

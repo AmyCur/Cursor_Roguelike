@@ -9,10 +9,13 @@ namespace Enemies{
         public virtual bool shouldHunt=>!shouldAttack;
         public virtual bool shouldAttack=>false;
         protected bool canAttack;
+
+        [Header("Combat Routine Parameters")]
         public float attackCD = 0.2f;
         public float range=3f;
-        protected Rigidbody2D rb;
         [SerializeField] bool hunting;
+
+        protected Rigidbody2D rb;
 
         float localTick=0;
         const int huntingDelay=100;
@@ -38,7 +41,8 @@ namespace Enemies{
         }
 
         void HandleAttack(){
-            _ = Bool.SetBoolAfterDelay(() => canAttack = false, attackCD);
+            canAttack=false;
+            _ = Bool.SetBoolAfterDelay(() => canAttack = true, attackCD);
             hunting=false;
             Attack();
         }

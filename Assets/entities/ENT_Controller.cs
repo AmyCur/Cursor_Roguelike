@@ -3,21 +3,41 @@ using Cursor;
 using UnityEngine.Events;
 using Combat;
 using Enemies;
+using Util;
 
 namespace Entities{
     public abstract class ENT_Controller : MonoBehaviour{
         public Health health;
         public float damage;
+        [SerializeField] protected bool canTakeDamage=true;
+        public static float iFramesTime=0.3f; 
 
 
 
         
         public void HandleDamageAnimation(){}
 
+        public virtual void Die(){
+            Destroy(gameObject);
+        }
+
+        public void CheckHealth(){
+            if(health<=0) Die();
+        }
+
         public void TakeDamage(float damage){
-            health=health-damage;
-            HandleDamageAnimation();
-            if(gameObject.IsEntity<ENM_Controller>()) CO_Controller.Instance.HandleDamageDealt();
+            if(canTakeDamage){
+                health=health-damage;
+                health.Clamp();
+                HandleDamageAnimation();
+                if(gameObject.IsEntity<ENM_Controller>()) CO_Controller.Instance.HandleDamageDealt();
+
+                canTakeDamage=false;
+                _ = Bool.SetBoolAfterDelay(() => canTakeDamage=true, iFramesTime);
+            }
+
+            CheckHealth();
+            
         }
 
         public ENT_Controller ChooseTarget(CombatPriority priority){

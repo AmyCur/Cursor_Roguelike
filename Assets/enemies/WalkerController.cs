@@ -6,6 +6,8 @@ namespace Enemies{
     public sealed class WalkerController : ENM_Controller{
 
         public override bool shouldAttack => gameObject.distance() < range;
+
+        [Header("Movement Parameters")]
         [SerializeField] float moveSpeed=12f;
 
         public override void Attack(){
