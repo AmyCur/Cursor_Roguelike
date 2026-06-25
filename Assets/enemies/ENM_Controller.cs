@@ -28,6 +28,8 @@ namespace Enemies{
             rb=GetComponent<Rigidbody2D>();
         }
 
+        
+
         protected virtual void Update(){
             localTick += Time.deltaTime;
             if(shouldAttack) hunting=false;
