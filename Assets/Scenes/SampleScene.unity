@@ -510,7 +510,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73123af68e2d1130d8af79a74aa1afc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shardSlots: []
+  shardSlots:
+  - shardSlot: {fileID: 797305165}
+    slotNumber: {fileID: 0}
+    slotIcon: {fileID: 0}
+  - shardSlot: {fileID: 1082277505}
+    slotNumber: {fileID: 0}
+    slotIcon: {fileID: 0}
+  - shardSlot: {fileID: 1655177920}
+    slotNumber: {fileID: 0}
+    slotIcon: {fileID: 0}
+  - shardSlot: {fileID: 870113544}
+    slotNumber: {fileID: 0}
+    slotIcon: {fileID: 0}
+  - shardSlot: {fileID: 753441098}
+    slotNumber: {fileID: 0}
+    slotIcon: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0

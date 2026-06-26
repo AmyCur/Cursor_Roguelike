@@ -9,6 +9,7 @@ namespace Combat.Shards{
         const int massTriggerDelay=100;
         public uint upgradeLevel=1;
         public bool started;
+        public Sprite sprite;
 
         public virtual void Start(){
             started=true;

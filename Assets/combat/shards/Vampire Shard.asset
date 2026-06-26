@@ -13,10 +13,12 @@ MonoBehaviour:
   m_Name: Vampire Shard
   m_EditorClassIdentifier: 
   upgradeLevel: 1
+  started: 1
+  sprite: {fileID: -1967931663966696591, guid: 41d5e9eab3338371f841fb1b5580a9b0, type: 3}
   triggers:
   - triggerCondition: 0
     threshold: 1
     triggerAmount: 1
-  healAmount: 3
-  hurtAmount: 0.97
+  healAmount: 5
+  hurtAmount: 1
   hurtTime: 10
